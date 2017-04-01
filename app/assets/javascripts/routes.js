@@ -12,6 +12,11 @@ angular
         templateUrl: 'views/search.html',
         controller: 'SearchController as vm'
       })
+      .state('collection', {
+        url: '/collection',
+        templateUrl: 'views/collection.html',
+        controller: 'CollectionController as vm'
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
