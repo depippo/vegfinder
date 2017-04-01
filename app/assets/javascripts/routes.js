@@ -10,7 +10,7 @@ angular
       .state('search', {
         url: '/search',
         templateUrl: 'views/search.html',
-        controller: 'SearchCtrl as vm'
+        controller: 'SearchController as vm'
       })
       .state('login', {
         url: '/login',
