@@ -1,4 +1,4 @@
-function SearchController($scope, $http, SearchService) {
+function SearchController($scope, $http, SearchService, CollectionService) {
 
   var ctrl = this;
 
@@ -28,6 +28,29 @@ function SearchController($scope, $http, SearchService) {
       console.log($scope.veganResults);
     })
   }
+
+
+  ctrl.getCollections = function() {
+    CollectionService.getCollection()
+    .success(function(response) {
+      $scope.collections = [];
+      response.forEach(function(item){
+        $scope.collections.push(item);
+      })
+      CollectionService.collections = $scope.collections
+    })
+  }
+
+
+    ctrl.saveToCollection = function(item){
+      console.log("calling the function")
+      CollectionService.saveToCollection(item)
+        .success(function(response){
+          console.log(response)
+        });
+    }
+
+
 
 }
 

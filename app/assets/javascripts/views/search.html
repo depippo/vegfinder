@@ -14,9 +14,21 @@
   <h6> {{ venue.location.lng }} </h6>
 </div>
 
-<div ng-repeat="item in veganResults">
+<div ng-repeat="item in veganResults" ng-click="vm.saveToCollection(item.venue)">
+
   <h4>{{ item.venue.name }}</h4>
+  <button type="button" class="btn btn-default btn-sm" ng-click="vm.saveToCollection(item.venue)">Save to collection</button>
   <h6> {{ item.venue.menu.url }} </h6>
   <h6> {{ item.venue.location.address }} </h6>
   <h6> {{ item.tips[0].text }} </h6>
+</div>
+
+
+
+<h3> Below the collection info:</h3>
+
+<button type="button" class="btn btn-default btn-sm" ng-click="vm.getCollections()">Retrieve collections</button>
+
+<div ng-repeat="item in collections">
+  <h4>{{ item.name }}</h4>
 </div>
