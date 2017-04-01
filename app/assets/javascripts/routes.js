@@ -7,6 +7,11 @@ angular
         templateUrl: 'views/home.html',
         controller: 'HomeCtrl'
       })
+      .state('search', {
+        url: '/search',
+        templateUrl: 'views/search.html',
+        controller: 'SearchCtrl as vm'
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',
