@@ -17,8 +17,8 @@ function SearchController($scope, $http, SearchService, CollectionService) {
     })
   }
 
-  ctrl.mallSearch = function(ll) {
-    SearchService.searchWithin(ll)
+  ctrl.placeSearch = function(city) {
+    SearchService.searchWithin(city)
     .done(function(response) {
       $scope.veganResults = [];
       response.response.groups[0].items.forEach(function(item){
@@ -42,12 +42,12 @@ function SearchController($scope, $http, SearchService, CollectionService) {
   }
 
 
-    ctrl.saveToCollection = function(item){
-      console.log("calling the function")
-      CollectionService.saveToCollection(item)
-        .success(function(response){
-          console.log(response)
-        });
+  ctrl.saveToCollection = function(item){
+    console.log("calling the function")
+    CollectionService.saveToCollection(item)
+      .success(function(response){
+        console.log(response)
+      });
     }
 
 

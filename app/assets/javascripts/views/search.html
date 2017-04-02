@@ -1,11 +1,11 @@
 <h1>search.html</h1>
 
-  <form ng-submit="vm.venueSearch(vm.city)" remote="true" id="search-form">
+ <!--  <form ng-submit="vm.venueSearch(vm.city)" remote="true" id="search-form">
     <input type="text" placeholder="Enter your city" ng-model="vm.city" />
-  </form>
+  </form> -->
 
-  <form ng-submit="vm.mallSearch(vm.ll)" remote="true" id="search-form">
-    <input type="text" placeholder="Enter lat/lng" ng-model="vm.ll" />
+  <form ng-submit="vm.placeSearch(vm.city)" remote="true" id="search-form">
+    <input type="text" placeholder="Enter city/state" ng-model="vm.city" />
   </form>
 
 <div ng-repeat="venue in searchResults">
