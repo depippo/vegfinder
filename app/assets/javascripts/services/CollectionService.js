@@ -1,6 +1,7 @@
 (function(){
-  function CollectionService($http){
+  function CollectionService($http, UserService){
 
+    var places;
 
     this.getCollection = function(){
       var url = '/api/collections.json'
@@ -14,13 +15,14 @@
 
 
     this.saveToCollection = function(item){
-      var newCollection = item.name;
-      var url = '/api/collections.json'
+      var newPlace = item.name;
+      var collectionId = UserService.user.collection.id
+      var url = '/api/collections/' + collectionId + '/places.json'
       return $http({
         url: url,
         method: 'PUT',
         data: {
-          name: newCollection
+          name: newPlace
         }
       })
     }
@@ -31,7 +33,7 @@
 
   }
 
-  CollectionService.$inject = ['$http']
+  CollectionService.$inject = ['$http', 'UserService']
 
 angular
   .module('vegfinder')

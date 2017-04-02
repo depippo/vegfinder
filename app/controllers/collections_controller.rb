@@ -8,16 +8,29 @@ class CollectionsController < ApplicationController
     render json: Collection.find(params[:id])
   end
 
-  def create
-    collection = Collection.find_or_create_by(collection_params)
+  def update
+    collection = Collection.find(params[:collection_id])
+    place = Place.find_or_create_by(place_params)
+    place.save
+    collection.places << place unless collection.places.include?(place)
     collection.save
+    user = collection.user
+    render json: user
   end
+
   
 private
 
-  def collection_params
-    params.require(:collection).permit(:name)
+  def place_params
+    params.require(:place).permit(:name)
   end
 
 
 end
+
+
+
+  #   def update
+  #   collection = Collection.find_or_create_by(collection_params)
+  #   collection.save
+  # end
