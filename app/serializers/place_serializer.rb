@@ -1,3 +1,3 @@
 class PlaceSerializer < ActiveModel::Serializer
-  attributes :id, :name
+  attributes :id, :name, :menu, :address, :description
 end

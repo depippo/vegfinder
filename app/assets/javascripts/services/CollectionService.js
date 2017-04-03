@@ -23,19 +23,22 @@
 
 
     this.saveToCollection = function(item){
+      var placeObject = {
+        name: item.venue.name,
+        menu: item.venue.menu.url,
+        address: item.venue.location.formattedAddress,
+        description: item.tips[0].text
+      }
       var collectionId = UserService.user.collection.id
       var url = '/api/collections/' + collectionId + '/places.json'
       return $http({
         url: url,
         method: 'PUT',
         data: {
-          place: item
+          place: placeObject
         }
       })
     }
-
-
-
 
 
   }

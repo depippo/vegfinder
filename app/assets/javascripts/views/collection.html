@@ -12,6 +12,9 @@ collection.html
   <div ng-repeat="item in places">
 
     <h4>{{ item.name }}</h4>
+    <h4> <a ng-href="{{ item.menu }}"> {{ item.menu }} </a></h4>
+    <h4>{{ item.address }}</h4>
+    <h4>{{ item.description }}</h4>
 
   </div>
 </div>
