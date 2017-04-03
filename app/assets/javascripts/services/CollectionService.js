@@ -13,13 +13,13 @@
 
 
     this.getOneCollection = function(){
-      var url = '/api/collections/5.json'
+      var collectionId = UserService.user.collection.id
+      var url = '/api/collections/' + collectionId + '.json'
       return $http({
         url: url,
         method: 'GET',
       })
     }
-
 
 
     this.saveToCollection = function(item){
