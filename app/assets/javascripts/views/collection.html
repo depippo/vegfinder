@@ -3,6 +3,15 @@ collection.html
 
 <button type="button" class="btn btn-default btn-sm" ng-click="vm.getCollections()">Retrieve collections</button>
 
-<div ng-repeat="item in collections">
+<!-- <div ng-repeat="item in collections">
   <h4>{{ item.name }}</h4>
+</div> -->
+
+
+<button type="button" class="btn btn-default btn-sm" ng-click="vm.getPlaces()">Retrieve places</button>
+
+<div ng-repeat="item in places">
+
+  <h4>{{ item.name }}</h4>
+
 </div>

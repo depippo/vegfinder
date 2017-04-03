@@ -12,17 +12,24 @@
     }
 
 
+    this.getOneCollection = function(){
+      var url = '/api/collections/5.json'
+      return $http({
+        url: url,
+        method: 'GET',
+      })
+    }
+
 
 
     this.saveToCollection = function(item){
-      var newPlace = item.name;
       var collectionId = UserService.user.collection.id
       var url = '/api/collections/' + collectionId + '/places.json'
       return $http({
         url: url,
         method: 'PUT',
         data: {
-          name: newPlace
+          place: item
         }
       })
     }
