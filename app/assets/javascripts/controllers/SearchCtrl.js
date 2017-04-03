@@ -47,6 +47,7 @@ function SearchController($scope, $http, SearchService, CollectionService) {
     CollectionService.saveToCollection(item)
       .success(function(response){
         console.log(response)
+        alert(item.name + " has been saved to your collection.");
       });
     }
 
