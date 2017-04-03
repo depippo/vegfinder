@@ -18,8 +18,8 @@
 
   <h4>{{ item.venue.name }}</h4>
   <button type="button" class="btn btn-default btn-sm" ng-click="vm.saveToCollection(item.venue)">Save to collection</button>
-  <h6> {{ item.venue.menu.url }} </h6>
-  <h6> {{ item.venue.location.address }} </h6>
+  <h6><a ng-href="{{ item.venue.menu.url }}"> {{ item.venue.menu.url }} </a></h6>
+  <h6> {{ item.venue.location.formattedAddress }} </h6>
   <h6> {{ item.tips[0].text }} </h6>
 </div>
 
