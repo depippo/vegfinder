@@ -7,11 +7,11 @@ collection.html
   <h4>{{ item.name }}</h4>
 </div> -->
 
+<div ng-init="vm.getPlaces()">
 
-<button type="button" class="btn btn-default btn-sm" ng-click="vm.getPlaces()">Retrieve places</button>
+  <div ng-repeat="item in places">
 
-<div ng-repeat="item in places">
+    <h4>{{ item.name }}</h4>
 
-  <h4>{{ item.name }}</h4>
-
+  </div>
 </div>
