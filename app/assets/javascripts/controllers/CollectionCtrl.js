@@ -19,7 +19,6 @@ function CollectionController($scope, $http, CollectionService, SearchService) {
     CollectionService.getOneCollection()
     .success(function(response) {
       console.log(response)
-      debugger
       $scope.places = [];
       response.places.forEach(function(item){
         $scope.places.push(item);
