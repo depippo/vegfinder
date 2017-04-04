@@ -17,6 +17,16 @@ angular
         templateUrl: 'views/collection.html',
         controller: 'CollectionController as vm'
       })
+      .state('collection.place/:id', {
+        url: '/place/:id',
+        templateUrl: 'views/collection/place.html',
+        controller: 'PlaceController as vm',
+        resolve: {
+          place: function($stateParams, CollectionService) {
+            return CollectionService.getPlace($stateParams.id);
+          }
+        }
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',

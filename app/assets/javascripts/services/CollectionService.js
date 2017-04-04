@@ -11,6 +11,14 @@
       })
     }
 
+    this.getPlace = function(id){
+      var url = '/api/places/' + id + '.json'
+      return $http({
+        url: url,
+        method: 'GET',
+      })
+    }
+
 
     this.getOneCollection = function(){
       var collectionId = UserService.user.collection.id
@@ -20,7 +28,6 @@
         method: 'GET',
       })
     }
-
 
     this.saveToCollection = function(item){
     var imageUrl = item.venue.photos.groups[0].items[0].prefix + '128' + item.venue.photos.groups[0].items[0].suffix;
