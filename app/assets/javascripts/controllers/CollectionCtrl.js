@@ -30,11 +30,12 @@ function CollectionController($scope, $http, CollectionService, SearchService) {
   ctrl.getMenu = function(id) {
     SearchService.getMenu(id)
     .done(function(response) {
-      console.log(response);
-      debugger;
-      $scope.menu = response.response.menu.menus.items[0];
-      SearchService.menu = $scope.menu;
-      console.log($scope.menu);
+      $scope.menus = [];
+      response.response.menu.menus.items[0].entries.items.forEach(function(menu){
+        $scope.menus.push(menu);
+      });
+      SearchService.menus = $scope.menus;
+      console.log($scope.menus);
     })
   }
 
