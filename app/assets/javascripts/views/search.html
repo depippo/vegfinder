@@ -17,10 +17,11 @@
 <div ng-repeat="item in veganResults">
 
   <h4>{{ item.venue.name }}</h4>
-  <button type="button" class="btn btn-default btn-sm" ng-click="vm.saveToCollection(item)">Save to collection</button>
+  <img ng-src="{{ item.venue.photos.groups[0].items[0].prefix}}128{{item.venue.photos.groups[0].items[0].suffix }}" >
   <h6><a ng-href="{{ item.venue.menu.url }}"> {{ item.venue.menu.url }} </a></h6>
   <h6> {{ item.venue.location.formattedAddress }} </h6>
   <h6> {{ item.tips[0].text }} </h6>
+  <button type="button" class="btn btn-default btn-sm" ng-click="vm.saveToCollection(item)">Save to collection</button>
 </div>
 
 

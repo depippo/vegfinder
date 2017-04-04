@@ -23,11 +23,13 @@
 
 
     this.saveToCollection = function(item){
+      var imageUrl = item.categories.icon.prefix + item.categories.icon.suffix;
       var placeObject = {
         name: item.venue.name,
         menu: item.venue.menu.url,
         address: item.venue.location.formattedAddress,
-        description: item.tips[0].text
+        description: item.tips[0].text,
+        image: imageUrl
       }
       var collectionId = UserService.user.collection.id
       var url = '/api/collections/' + collectionId + '/places.json'
