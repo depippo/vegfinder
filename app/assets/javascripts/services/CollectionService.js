@@ -30,7 +30,8 @@
         menu: item.venue.menu.url,
         address: item.venue.location.formattedAddress,
         description: item.tips[0].text,
-        image: imageUrl
+        image: imageUrl,
+        venue_id: item.venue.id
       }
       var collectionId = UserService.user.collection.id
       var url = '/api/collections/' + collectionId + '/places.json'
