@@ -16,6 +16,9 @@ collection.html
     <h4> <a ng-href="{{ item.menu }}"> {{ item.menu }} </a></h4>
     <h4>{{ item.address }}</h4>
     <h4>{{ item.description }}</h4>
+    <button type="button" ng-click="vm.getMenu(item.venue_id)">View Menu</button>
+
+    <h6> {{ menu.menuId }} </h6>
 
   </div>
 </div>
