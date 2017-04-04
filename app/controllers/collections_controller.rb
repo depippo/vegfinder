@@ -22,7 +22,7 @@ class CollectionsController < ApplicationController
 private
 
   def place_params
-    params.require(:place).permit(:name, :menu, :address, :description)
+    params.require(:place).permit(:name, :menu, :address, :description, :image)
   end
 
 

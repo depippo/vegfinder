@@ -23,7 +23,8 @@
 
 
     this.saveToCollection = function(item){
-      var imageUrl = item.categories.icon.prefix + item.categories.icon.suffix;
+    var imageUrl = item.venue.photos.groups[0].items[0].prefix + '128' + item.venue.photos.groups[0].items[0].suffix;
+      // var imageUrl = item.categories.icon.prefix + item.categories.icon.suffix;
       var placeObject = {
         name: item.venue.name,
         menu: item.venue.menu.url,
