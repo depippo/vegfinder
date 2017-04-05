@@ -1,4 +1,4 @@
-function CollectionController($scope, $http, CollectionService, SearchService) {
+function CollectionController($scope, $http, CollectionService) {
 
   var ctrl = this;
 
@@ -24,18 +24,6 @@ function CollectionController($scope, $http, CollectionService, SearchService) {
         $scope.places.push(item);
       })
       CollectionService.places = $scope.places
-    })
-  }
-
-  ctrl.getMenu = function(id) {
-    SearchService.getMenu(id)
-    .done(function(response) {
-      $scope.menus = [];
-      response.response.menu.menus.items[0].entries.items.forEach(function(menu){
-        $scope.menus.push(menu);
-      });
-      SearchService.menus = $scope.menus;
-      console.log($scope.menus);
     })
   }
 

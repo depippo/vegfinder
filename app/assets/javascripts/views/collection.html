@@ -17,15 +17,6 @@ collection.html
     <h4> <a ng-href="{{ item.menu }}"> {{ item.menu }} </a></h4>
     <h4>{{ item.address }}</h4>
     <h4>{{ item.description }}</h4>
-    <button type="button" ng-click="vm.getMenu(item.venue_id)">View Menu</button>
-
-  <div ng-repeat="menu in menus">
-    <h4> Menu category: {{ menu.name }}</h4>
-      <div ng-repeat="menuItem in menu.entries.items">
-        <h5> {{ menuItem.name }}</h5>
-        <h6> {{ menuItem.description }}</h6>
-      </div>
-  </div>
 
   </div>
 </div>
