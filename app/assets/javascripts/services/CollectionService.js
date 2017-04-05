@@ -31,11 +31,11 @@
 
     this.saveToCollection = function(item){
     var imageUrl = item.venue.photos.groups[0].items[0].prefix + '128' + item.venue.photos.groups[0].items[0].suffix;
-      // var imageUrl = item.categories.icon.prefix + item.categories.icon.suffix;
+    var formattedAddress = item.venue.location.formattedAddress[0] + ", " + item.venue.location.formattedAddress[1];
       var placeObject = {
         name: item.venue.name,
         menu: item.venue.menu.url,
-        address: item.venue.location.formattedAddress,
+        address: formattedAddress,
         description: item.tips[0].text,
         image: imageUrl,
         venue_id: item.venue.id

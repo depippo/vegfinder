@@ -1,6 +1,6 @@
 function PlaceController($scope, place) {
 
-  $scope.place = place.data
+  $scope.place = place.data;
 
   var ctrl = this;
 
