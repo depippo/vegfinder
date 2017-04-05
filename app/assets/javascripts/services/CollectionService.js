@@ -31,9 +31,15 @@
     this.saveToCollection = function(item, id){
     var imageUrl = item.venue.photos.groups[0].items[0].prefix + '128' + item.venue.photos.groups[0].items[0].suffix;
     var formattedAddress = item.venue.location.formattedAddress[0] + ", " + item.venue.location.formattedAddress[1];
+    if (!item.venue.menu) {
+      var venueMenu = undefined;
+    }
+    else {
+      var venueMenu = item.venue.menu.url;
+    }
       var placeObject = {
         name: item.venue.name,
-        menu: item.venue.menu.url,
+        menu: venueMenu,
         address: formattedAddress,
         description: item.tips[0].text,
         image: imageUrl,
