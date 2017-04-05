@@ -13,6 +13,7 @@ collection.html
 
     <h4>{{ item.name }}</h4>
     <img ng-src="{{ item.image }}" >
+    <a ui-sref="place({id: item.id})">Place show page</a>
     <h4> <a ng-href="{{ item.menu }}"> {{ item.menu }} </a></h4>
     <h4>{{ item.address }}</h4>
     <h4>{{ item.description }}</h4>
@@ -29,5 +30,4 @@ collection.html
   </div>
 </div>
 
-<h4>Place: </h4>
 <div ui-view></div>
