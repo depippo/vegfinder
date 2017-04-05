@@ -20,16 +20,15 @@
     }
 
 
-    this.getOneCollection = function(){
-      var collectionId = UserService.user.collection.id
-      var url = '/api/collections/' + collectionId + '.json'
+    this.getOneCollection = function(id){
+      var url = '/api/collections/' + id + '.json'
       return $http({
         url: url,
         method: 'GET',
       })
     }
 
-    this.saveToCollection = function(item){
+    this.saveToCollection = function(item, id){
     var imageUrl = item.venue.photos.groups[0].items[0].prefix + '128' + item.venue.photos.groups[0].items[0].suffix;
     var formattedAddress = item.venue.location.formattedAddress[0] + ", " + item.venue.location.formattedAddress[1];
       var placeObject = {
@@ -40,8 +39,7 @@
         image: imageUrl,
         venue_id: item.venue.id
       }
-      var collectionId = UserService.user.collection.id
-      var url = '/api/collections/' + collectionId + '/places.json'
+      var url = '/api/collections/' + id + '/places.json'
       return $http({
         url: url,
         method: 'PUT',

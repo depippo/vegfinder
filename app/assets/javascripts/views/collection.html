@@ -1,4 +1,5 @@
 collection.html
+<h3 ng-if="user">Welcome to your collection, {{user.username}}</h3>
 
 
 <button type="button" class="btn btn-default btn-sm" ng-click="vm.getCollections()">Retrieve collections</button>
@@ -7,7 +8,7 @@ collection.html
   <h4>{{ item.name }}</h4>
 </div> -->
 
-<div ng-init="vm.getPlaces()">
+<div ng-init="vm.getPlaces(user.id)">
 
   <div ng-repeat="item in places">
 

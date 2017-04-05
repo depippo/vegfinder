@@ -15,8 +15,8 @@ function CollectionController($scope, $http, CollectionService) {
   // }
 
 
-  ctrl.getPlaces = function() {
-    CollectionService.getOneCollection()
+  ctrl.getPlaces = function(id) {
+    CollectionService.getOneCollection(id)
     .success(function(response) {
       console.log(response)
       $scope.places = [];

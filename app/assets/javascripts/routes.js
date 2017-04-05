@@ -5,17 +5,26 @@ angular
       .state('home', {
         url: '/home',
         templateUrl: 'views/home.html',
-        controller: 'HomeCtrl'
+        controller: 'HomeCtrl',
+       onEnter: function(Auth, $state){
+          Auth.currentUser();
+        }
       })
       .state('search', {
         url: '/search',
         templateUrl: 'views/search.html',
-        controller: 'SearchController as vm'
+        controller: 'SearchController as vm',
+       onEnter: function(Auth, $state){
+          Auth.currentUser();
+        }
       })
       .state('collection', {
         url: '/collection',
         templateUrl: 'views/collection.html',
-        controller: 'CollectionController as vm'
+        controller: 'CollectionController as vm',
+       onEnter: function(Auth, $state){
+          Auth.currentUser();
+        }
       })
       .state('place', {
         url: '/place/:id',
