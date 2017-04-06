@@ -18,7 +18,7 @@ angular
           Auth.currentUser();
         }
       })
-      .state('details', {
+      .state('search.details', {
         url: '/details/:id',
         templateUrl: 'views/search/details.html',
         controller: 'DetailsController as vm',

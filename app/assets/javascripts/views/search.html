@@ -13,5 +13,11 @@
   <h6> {{ item.venue.location.address }} </h6>
   <h6> {{ item.tips[0].text }} </h6>
   <button type="button" class="btn btn-default btn-sm" ng-click="vm.saveToCollection(item, user.id)">Save to collection</button>
-  <h6> <a ng-href= "#/details/{{item.venue.id}}"> More information</a></h6>
+  <h6> <a ng-href= "#/search/details/{{item.venue.id}}"> More information</a></h6>
+</div>
+
+<h4> BELOW IS THE UI-VIEW </h4>
+
+<div ui-view>
+  
 </div>
