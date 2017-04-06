@@ -1,0 +1,12 @@
+details.html
+
+
+<button type="button" ng-click="vm.showPlaceInfo()">console log the place info</button>
+
+  <h4>{{ details.venue.name }}</h4>
+  <img ng-src="{{ details.venue.photos.groups[0].items[0].prefix}}128{{details.venue.photos.groups[0].items[0].suffix }}" >
+  <h6 ng-if="details.venue.url"><a ng-href="{{ details.venue.url }}" target="_blank"> Website</a></h6>
+  <!-- <h6 ng-if="item.venue.menu.url"><a ng-href="{{ item.venue.menu.url }}" target="_blank"> Menu </a></h6> -->
+  <h6> {{ details.venue.location.address }} </h6>
+  <h6> {{ details.venue.tips.groups[0].items[0].text }} </h6>
+  <button type="button" class="btn btn-default btn-sm" ng-click="vm.saveToCollection(details, user.id)">Save to collection</button>

@@ -18,6 +18,19 @@ angular
           Auth.currentUser();
         }
       })
+      .state('details', {
+        url: '/details/:id',
+        templateUrl: 'views/search/details.html',
+        controller: 'DetailsController as vm',
+        resolve: {
+          details: function($stateParams, SearchService) {
+            return SearchService.getPlace($stateParams.id);
+          }
+        },
+       onEnter: function(Auth, $state){
+          Auth.currentUser();
+        }
+      })
       .state('collection', {
         url: '/collection',
         templateUrl: 'views/collection.html',
