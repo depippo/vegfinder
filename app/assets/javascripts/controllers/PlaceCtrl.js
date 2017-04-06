@@ -1,6 +1,7 @@
-function PlaceController($scope, place, SearchService) {
+function PlaceController($scope, place, SearchService, PlaceService) {
 
   $scope.place = place.data;
+  $scope.rec = null;
 
   var ctrl = this;
 
@@ -17,8 +18,21 @@ function PlaceController($scope, place, SearchService) {
     })
   }
 
+
+
+  ctrl.saveRec = function(id) {
+    console.log("calling saverec function");
+    var dish = $scope.rec;
+    PlaceService.saveRec(id, dish)
+    .success(function(response) {
+      console.log("PlaceService.saverec done");
+    })
+  }
+
+
 }
 
 angular
   .module('vegfinder')
   .controller('PlaceController', PlaceController);
+

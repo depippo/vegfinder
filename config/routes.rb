@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     get "/users/:id(.:format)" => "users#show"
     put "/collections(.:format)" => "collections#create"
     put "/collections/:collection_id/places(.:format)" => "collections#update"
+    put "/places/:id/recommendations(.:format)" => "places#update"
+    get "/places/:id/recommendations(.:format)" => "places#recs"
   end
   root 'application#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
