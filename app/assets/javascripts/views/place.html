@@ -21,3 +21,8 @@
 
   <input type="text" ng-model="rec" placeholder="Enter something" />
   <input type="button" ng-click="vm.saveRec(place.id)" value="Recommend Menu Item" />
+
+
+<div ng-repeat="item in menuItems">
+    <h1>Rec: {{ item.dish }} </h1>
+</div>

@@ -10,7 +10,7 @@ class PlacesController < ApplicationController
     recommendation.save
     place.recommendations << recommendation
     place.save
-    render json: place
+    render json: recommendation
   end
 
   def recs
