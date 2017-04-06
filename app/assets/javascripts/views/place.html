@@ -4,7 +4,7 @@
 
     <h4>{{ place.name }}</h4>
     <img ng-src="{{ place.image }}" >
-    <h4> <a ng-href="{{ place.menu }}"> {{ place.menu }} </a></h4>
+    <h4> <a ng-href="{{ place.menu }}" target="_blank"> {{ place.menu }} </a></h4>
     <h4>{{ place.address }}</h4>
     <h4>{{ place.description }}</h4>
     <button type="button" ng-click="vm.getMenu(place.venue_id)">View Menu</button>
@@ -15,6 +15,4 @@
         <h5> {{ menuItem.name }}</h5>
         <h6> {{ menuItem.description }}</h6>
       </div>
-  </div>
-
   </div>

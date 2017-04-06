@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :reviews
+  resources :recommendations
   devise_for :users
   scope :api do
     get "/collections(.:format)" => "collections#index"
