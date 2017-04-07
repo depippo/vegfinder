@@ -19,10 +19,14 @@
 
 <br>
 
-  <input type="text" ng-model="rec" placeholder="Enter something" />
-  <input type="button" ng-click="vm.saveRec(place.id)" value="Recommend Menu Item" />
+<form name="recForm" novalidate ng-submit="recForm.$valid && vm.saveRec(place.id)">
+  <input type="text" name="rec" ng-model="rec" placeholder="Enter a menu item" ng-minlength="3" required/>
+  <span style="color:Red" ng-show="recForm.rec.$error.minlength"> Must be at least 3 characters! </span>
+  <button type="submit"> Recommend </button>
+</form>
+  
 
 
 <div ng-repeat="item in menuItems">
-    <h1>Rec: {{ item.dish }} </h1>
+    <h6>Rec: {{ item.dish }} </h6>
 </div>
