@@ -5,13 +5,8 @@ function PlacesController($scope, places, SearchService, PlaceService, $rootScop
     $scope.places.push(place);
    })
 
-  this.search = '';
+  $scope.search = '';
 
-  this.refilter = function() {
-    this.filteredList = $filter('filter')($scope.places, this.search);
-  };
-
-  this.refilter();
 }
 
 angular
