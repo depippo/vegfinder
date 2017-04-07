@@ -24,9 +24,20 @@
   <span style="color:Red" ng-show="recForm.rec.$error.minlength"> Must be at least 3 characters! </span>
   <button type="submit"> Recommend </button>
 </form>
+
+<form name="reviewForm" novalidate ng-submit="reviewForm.$valid && vm.saveReview(place.id)">
+  <input type="text" name="review" ng-model="review" placeholder="Enter a review" ng-minlength="3" required/>
+  <span style="color:Red" ng-show="reviewForm.review.$error.minlength"> Must be at least 3 characters! </span>
+  <button type="submit"> Submit </button>
+</form>
   
 
 
 <div ng-repeat="item in menuItems">
     <h6>Rec: {{ item.dish }} </h6>
 </div>
+
+<div ng-repeat="review in reviews">
+    <h6>Review: {{ review.content }} </h6>
+</div>
+

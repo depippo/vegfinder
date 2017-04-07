@@ -1,16 +1,30 @@
 function PlaceController($scope, place, SearchService, PlaceService, $rootScope) {
   
   $scope.menuItems = [];
+  $scope.reviews = []
   $scope.place = place.data;
   place.data.recommendations.forEach(function(rec){
     $scope.menuItems.push(rec);
   })
+  place.data.reviews.forEach(function(review){
+    $scope.reviews.push(review);
+  })
 
   $scope.rec = null;
+
   $scope.$on('update', function(event, value){
     $scope.menuItems.push(value);
     console.log("scope menu items is next")
     console.log($scope.menuItems);
+    console.log($scope.place);
+  })
+
+  $scope.review = null;
+
+  $scope.$on('review', function(event, value){
+    $scope.reviews.push(value);
+    console.log("scope reviews is next")
+    console.log($scope.reviews);
     console.log($scope.place);
   })
 
@@ -29,8 +43,6 @@ function PlaceController($scope, place, SearchService, PlaceService, $rootScope)
     })
   }
 
-
-
   ctrl.saveRec = function(id) {
     console.log("calling saverec function");
     var dish = $scope.rec;
@@ -41,6 +53,18 @@ function PlaceController($scope, place, SearchService, PlaceService, $rootScope)
       console.log(response);
     })
   }
+
+  ctrl.saveReview = function(id) {
+    console.log("calling savereview function");
+    var content = $scope.review;
+    PlaceService.saveReview(id, content)
+    .success(function(response) {
+      $rootScope.$broadcast('review', response);
+      console.log("PlaceService.savereview done");
+      console.log(response);
+    })
+  }
+
 
 
 }

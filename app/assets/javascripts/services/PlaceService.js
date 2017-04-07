@@ -16,6 +16,21 @@
       })
     }
 
+    this.saveReview = function(id, content){
+      var url = '/api/places/' + id + '/reviews.json'
+      var reviewObject = {
+        content: content
+      }
+      console.log(reviewObject);
+      return $http({
+        url: url,
+        method: 'PUT',
+        data: {
+          review: reviewObject
+        }
+      })
+    }
+
   }
 
   PlaceService.$inject = ['$http', 'UserService']

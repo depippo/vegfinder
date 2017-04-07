@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     put "/collections(.:format)" => "collections#create"
     put "/collections/:collection_id/places(.:format)" => "collections#update"
     put "/places/:id/recommendations(.:format)" => "places#update"
+    put "/places/:id/reviews(.:format)" => "places#review"
     get "/places/:id/recommendations(.:format)" => "places#recs"
   end
   root 'application#index'
