@@ -1,7 +1,7 @@
 <h1>Find restaurants</h1>
 
   <form ng-submit="vm.placeSearch(vm.city)" remote="true" id="search-form">
-    <input type="text" placeholder="Enter city, state" ng-model="vm.city" />
+    <input type="text" googleplace placeholder="Enter city, state" ng-model="vm.city" />
   </form>
 
 <div ng-repeat="item in veganResults">

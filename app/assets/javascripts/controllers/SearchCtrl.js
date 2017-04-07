@@ -1,6 +1,7 @@
 function SearchController($scope, $http, SearchService, CollectionService) {
 
   var ctrl = this;
+  $scope.gPlace;
 
   ctrl.venueSearch = function(city) {
     SearchService.getVenues(city)
