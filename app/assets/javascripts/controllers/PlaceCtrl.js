@@ -43,10 +43,10 @@ function PlaceController($scope, place, SearchService, PlaceService, $rootScope)
     })
   }
 
-  ctrl.saveRec = function(id) {
+  ctrl.saveRec = function(id, user) {
     console.log("calling saverec function");
     var dish = $scope.rec;
-    PlaceService.saveRec(id, dish)
+    PlaceService.saveRec(id, dish, user)
     .success(function(response) {
       $rootScope.$broadcast('update', response);
       console.log("PlaceService.saverec done");
@@ -54,10 +54,10 @@ function PlaceController($scope, place, SearchService, PlaceService, $rootScope)
     })
   }
 
-  ctrl.saveReview = function(id) {
+  ctrl.saveReview = function(id, user) {
     console.log("calling savereview function");
     var content = $scope.review;
-    PlaceService.saveReview(id, content)
+    PlaceService.saveReview(id, content, user)
     .success(function(response) {
       $rootScope.$broadcast('review', response);
       console.log("PlaceService.savereview done");

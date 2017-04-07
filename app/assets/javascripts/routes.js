@@ -43,6 +43,9 @@ angular
         url: '/place/:id',
         templateUrl: 'views/place.html',
         controller: 'PlaceController as vm',
+       onEnter: function(Auth, $state){
+          Auth.currentUser();
+        },
         resolve: {
           place: function($stateParams, CollectionService) {
             return CollectionService.getPlace($stateParams.id);

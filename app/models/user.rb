@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :collection
+  has_many :recommendations
+  has_many :reviews
   after_create :create_collection
 
   def create_collection

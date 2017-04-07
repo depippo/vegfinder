@@ -35,11 +35,11 @@ class PlacesController < ApplicationController
 private
 
   def recommendation_params
-    params.require(:recommendation).permit(:dish)
+    params.require(:recommendation).permit(:dish, :user_id)
   end
 
   def review_params
-    params.require(:review).permit(:content)
+    params.require(:review).permit(:content, :user_id)
   end
 
 end
