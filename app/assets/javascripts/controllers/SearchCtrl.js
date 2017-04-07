@@ -42,18 +42,6 @@ function SearchController($scope, $http, SearchService, CollectionService) {
     })
   }
 
-
-  ctrl.saveToCollection = function(item, id){
-    console.log("calling the function")
-    CollectionService.saveToCollection(item, id)
-      .success(function(response){
-        console.log(response)
-        alert(item.venue.name + " has been saved to your collection.");
-      });
-    }
-
-
-
 }
 
 angular
