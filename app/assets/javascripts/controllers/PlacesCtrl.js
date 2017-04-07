@@ -1,5 +1,9 @@
-function PlacesController($scope, place, SearchService, PlaceService, $rootScope) {
-
+function PlacesController($scope, places, SearchService, PlaceService, $rootScope) {
+   $scope.places = [];
+   
+   places.data.forEach(function(place){
+    $scope.places.push(place);
+   })
 }
 
 angular

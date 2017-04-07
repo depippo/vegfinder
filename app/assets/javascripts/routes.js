@@ -54,7 +54,7 @@ angular
         templateUrl: 'views/places.html',
         controller: 'PlacesController as vm',
         resolve: {
-          place: function($stateParams, PlaceService) {
+          places: function($stateParams, PlaceService) {
             return PlaceService.getPlaces();
           }
         }
