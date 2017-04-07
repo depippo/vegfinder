@@ -20,7 +20,7 @@
     this.saveReview = function(id, content, user){
       var url = '/api/places/' + id + '/reviews.json'
       var reviewObject = {
-        user_id: user.id,
+        user_id: user,
         content: content
       }
       console.log(reviewObject);
