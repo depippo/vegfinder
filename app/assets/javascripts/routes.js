@@ -49,6 +49,16 @@ angular
           }
         }
       })
+      .state('places', {
+        url: '/places',
+        templateUrl: 'views/places.html',
+        controller: 'PlacesController as vm',
+        resolve: {
+          place: function($stateParams, PlaceService) {
+            return PlaceService.getPlaces();
+          }
+        }
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'views/login.html',

@@ -3,6 +3,10 @@ class PlacesController < ApplicationController
   def show
     render json: Place.find(params[:id])
   end
+
+  def index
+    render json: Place.all
+  end
   
   def update
     place = Place.find(params[:id])

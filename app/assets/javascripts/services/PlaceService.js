@@ -31,6 +31,14 @@
       })
     }
 
+    this.getPlaces = function(id){
+      var url = '/api/places.json'
+      return $http({
+        url: url,
+        method: 'GET',
+      })
+    }
+
   }
 
   PlaceService.$inject = ['$http', 'UserService']
