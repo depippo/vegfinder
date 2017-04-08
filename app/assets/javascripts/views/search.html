@@ -1,21 +1,20 @@
 <h3>Find restaurants</h3>
-<div class="row">
-  <div class="col-xs-6">
-      <form ng-submit="vm.placeSearch(vm.city)" remote="true" id="search-form">
-        <input type="text" googleplace placeholder="Enter city, state" ng-model="vm.city" />
-      </form>
+  <form ng-submit="vm.placeSearch(vm.city)" remote="true" id="search-form">
+    <input type="text" googleplace placeholder="Enter city, state" ng-model="vm.city" />
+  </form>
 
+<div class="row">
+  <div class="col-xs-4">
     <div ng-repeat="item in veganResults">
 
       <h4>{{ item.venue.name }}</h4>
       <img ng-src="{{ item.venue.photos.groups[0].items[0].prefix}}128{{item.venue.photos.groups[0].items[0].suffix }}" >
       <h6> {{ item.venue.location.address }} </h6>
-      <h6> {{ item.tips[0].text }} </h6>
       <h6> <a ng-href= "#/search/details/{{item.venue.id}}"> More information</a></h6>
     </div>
   </div>
 
-  <div class="col-xs-6" data-spy="affix" data-offset-top="197" ui-view>
+  <div class="col-xs-8" id="fixed" ui-view>
   </div>
 
 </div>

@@ -1,8 +1,4 @@
-  .affix {
-      top: 0;
-      width: 100%;
-  }
-
-  .affix + .container-fluid {
-      padding-top: 70px;
-  }
+#fixed {
+  position: fixed;
+  right: 0;
+}

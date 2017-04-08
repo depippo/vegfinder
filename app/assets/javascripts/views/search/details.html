@@ -1,8 +1,3 @@
-details.html
-
-
-<button type="button" ng-click="vm.showPlaceInfo()">console log the place info</button>
-
   <h4>{{ details.venue.name }}</h4>
   <img ng-src="{{ details.venue.photos.groups[0].items[0].prefix}}128{{details.venue.photos.groups[0].items[0].suffix }}" >
   <h6 ng-if="details.venue.url"><a ng-href="{{ details.venue.url }}" target="_blank"> Website</a></h6>
