@@ -3,6 +3,7 @@
   <head>
     <title>Vegfinder</title>
     <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
@@ -10,7 +11,9 @@
   </head>
 
   <body ng-app="vegfinder">
-    <nav-bar></nav-bar>
-    <ui-view></ui-view>
+    <div class="container-fluid">
+      <nav-bar></nav-bar>
+      <ui-view></ui-view>
+    </div>
   </body>
 </html>

@@ -13,6 +13,8 @@
     "angular": "v1.5.8",
     "angular-ui-router": "latest",
     "angular-devise": "latest",
+    "angular-bootstrap" : "latest",
+    "bootstrap" : "v3.3.6"
     }
   }
 }
