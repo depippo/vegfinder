@@ -1,25 +1,24 @@
-collection.html
-<h3 ng-if="user">Welcome to your collection, {{user.username}}</h3>
+<h2 ng-if="user">{{user.username}}'s saved restaurants</h2>
 
-
-<button type="button" class="btn btn-default btn-sm" ng-click="vm.getCollections()">Retrieve collections</button>
-
-<!-- <div ng-repeat="item in collections">
-  <h4>{{ item.name }}</h4>
-</div> -->
-
-<div ng-init="vm.getPlaces(user.id)">
-
-  <div ng-repeat="item in places">
-
-    <h4>{{ item.name }}</h4>
-    <img ng-src="{{ item.image }}" >
-    <a ui-sref="place({id: item.id})">Place show page</a>
-    <h4> <a ng-href="{{ item.menu }}"> {{ item.menu }} </a></h4>
-    <h4>{{ item.address }}</h4>
-    <h4>{{ item.description }}</h4>
-
+<ul class="list-group">
+  <div ng-init="vm.getPlaces(user.id)">
+      <div ng-repeat="item in places">
+        <a ui-sref="place({id: item.id})" class="list-group-item list-group-item-action">
+        <h3>{{ item.name }}</h3>
+        <img ng-src="{{ item.image }}" >
+<!--         <a ui-sref="place({id: item.id})">Place show page</a> -->
+<!--         <h4> <a ng-href="{{ item.menu }}"> {{ item.menu }} </a></h4> -->
+        <h4>{{ item.address }}</h4>
+        <h4>{{ item.description }}</h4>
+        </a>
+      </div>
   </div>
-</div>
+</ul>
 
-<div ui-view></div>
+
+
+
+
+
+<!-- 
+<div ui-view></div> -->
