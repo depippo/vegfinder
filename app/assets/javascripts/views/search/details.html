@@ -1,7 +1,16 @@
-  <h4>{{ details.venue.name }}</h4>
-  <img ng-src="{{ details.venue.photos.groups[0].items[0].prefix}}128{{details.venue.photos.groups[0].items[0].suffix }}" >
-  <h6 ng-if="details.venue.url"><a ng-href="{{ details.venue.url }}" target="_blank"> Website</a></h6>
-  <!-- <h6 ng-if="item.venue.menu.url"><a ng-href="{{ item.venue.menu.url }}" target="_blank"> Menu </a></h6> -->
-  <h6> {{ details.venue.location.address }} </h6>
-  <h6> {{ details.venue.tips.groups[0].items[0].text }} </h6>
-  <button type="button" class="btn btn-default btn-sm" ng-click="vm.saveToCollection(details, user.id)">Save to collection</button>
+  <h3>{{ details.venue.name }}</h4>
+  <img ng-src="{{ details.venue.bestPhoto.prefix}}192{{details.venue.bestPhoto.suffix }}" >
+  <h5 ng-if="details.venue.url"><a ng-href="{{ details.venue.url }}" target="_blank"> Website</a></h5>
+  <h5 ng-if="details.venue.menu.url"><a ng-href="{{ details.venue.menu.url }}" target="_blank"> Menu </a></h5>
+  <h5> {{ details.venue.location.address }} </h6>
+  <h5> {{ details.venue.tips.groups[0].items[0].text }} </h6>
+
+<h5> Price range: {{ details.venue.price.message }} </h5>
+<h5> Credit cards accepted: {{ details.venue.attributes.groups[1].items[0].displayValue }} </h5>
+<h5> Outdoor seating: {{ details.venue.attributes.groups[2].items[0].displayValue }} </h5>
+<h5> {{ details.venue.contact.formattedPhone }} </h5>
+
+
+
+
+  <button type="button" class="btn btn-default btn-sm" ng-click="vm.saveToCollection(details, user.id)">Save to favorites</button>

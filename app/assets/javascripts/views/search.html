@@ -4,17 +4,19 @@
   </form>
 
 <div class="row">
-  <div class="col-xs-4">
-    <div ng-repeat="item in veganResults">
+  <div class="col-xs-5">
+    <ul class="list-group">
+      <div ng-repeat="item in veganResults" class="list-group-item list-group-item-action">
 
-      <h4>{{ item.venue.name }}</h4>
-      <img ng-src="{{ item.venue.photos.groups[0].items[0].prefix}}128{{item.venue.photos.groups[0].items[0].suffix }}" >
-      <h6> {{ item.venue.location.address }} </h6>
-      <h6> <a ng-href= "#/search/details/{{item.venue.id}}"> More information</a></h6>
-    </div>
+        <h4>{{ item.venue.name }}</h4>
+        <img ng-src="{{ item.venue.photos.groups[0].items[0].prefix}}128{{item.venue.photos.groups[0].items[0].suffix }}" >
+        <h6> {{ item.venue.location.address }} </h6>
+        <h6> <a ng-href= "#/search/details/{{item.venue.id}}"> More information</a></h6>
+      </div>
+    </ul>
   </div>
 
-  <div class="col-xs-8" id="fixed" ui-view>
+  <div class="col-xs-7" id="fixed" ui-view>
   </div>
 
 </div>
