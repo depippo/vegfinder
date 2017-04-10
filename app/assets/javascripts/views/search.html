@@ -1,17 +1,18 @@
 <h3>Find restaurants</h3>
   <form ng-submit="vm.placeSearch(vm.city)" remote="true" id="search-form">
-    <input type="text" googleplace placeholder="Enter city, state" ng-model="vm.city" />
+    <input type="text" class="form-control" googleplace placeholder="Enter city, state" ng-model="vm.city" />
   </form>
 
 <div class="row">
   <div class="col-xs-5">
     <ul class="list-group">
-      <div ng-repeat="item in veganResults" class="list-group-item list-group-item-action">
-
+      <div ng-repeat="item in veganResults">
+        <a ng-href= "#/search/details/{{item.venue.id}}" class="list-group-item list-group-item-action">
         <h4>{{ item.venue.name }}</h4>
         <img ng-src="{{ item.venue.photos.groups[0].items[0].prefix}}128{{item.venue.photos.groups[0].items[0].suffix }}" >
-        <h6> {{ item.venue.location.address }} </h6>
-        <h6> <a ng-href= "#/search/details/{{item.venue.id}}"> More information</a></h6>
+        <h5> {{ item.venue.location.address }} </h5>
+        <h5> {{ item.tips[0].text }} </h5>
+        </a>
       </div>
     </ul>
   </div>

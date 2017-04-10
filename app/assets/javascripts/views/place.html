@@ -1,13 +1,10 @@
-<h1>place.html</h1>
 <h3> {{ place.name }} </h3>
+<img ng-src="{{ place.image }}" >
+<h4> <a ng-href="{{ place.menu }}" target="_blank"> {{ place.menu }} </a></h4>
+<h4>{{ place.address }}</h4>
+<h4>{{ place.description }}</h4>
 
-
-    <h4>{{ place.name }}</h4>
-    <img ng-src="{{ place.image }}" >
-    <h4> <a ng-href="{{ place.menu }}" target="_blank"> {{ place.menu }} </a></h4>
-    <h4>{{ place.address }}</h4>
-    <h4>{{ place.description }}</h4>
-    <button type="button" ng-click="vm.getMenu(place.venue_id)">View Menu</button>
+<button type="button" ng-click="vm.getMenu(place.venue_id)">View Menu</button>
 
   <div ng-repeat="menu in menus">
     <h4> Menu category: {{ menu.name }}</h4>
@@ -31,8 +28,6 @@
   <button type="submit"> Submit </button>
 </form>
   
-
-
 <div ng-repeat="item in menuItems">
   <h6> {{ item.user.username }} recommends: {{ item.dish }}</h6>
 </div>
@@ -40,4 +35,3 @@
 <div ng-repeat="review in reviews">
   <h6> {{ review.user.username }} says: {{ review.content }} </h6>
 </div>
-

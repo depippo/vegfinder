@@ -1,16 +1,27 @@
-  <h3>{{ details.venue.name }}</h4>
-  <img ng-src="{{ details.venue.bestPhoto.prefix}}192{{details.venue.bestPhoto.suffix }}" >
-  <h5 ng-if="details.venue.url"><a ng-href="{{ details.venue.url }}" target="_blank"> Website</a></h5>
-  <h5 ng-if="details.venue.menu.url"><a ng-href="{{ details.venue.menu.url }}" target="_blank"> Menu </a></h5>
-  <h5> {{ details.venue.location.address }} </h6>
-  <h5> {{ details.venue.tips.groups[0].items[0].text }} </h6>
+  <div ng-init="vm.getPlaceInfo()">
+    <h3>{{ details.venue.name }}</h4>
+    <img ng-src="{{ details.venue.bestPhoto.prefix}}192{{details.venue.bestPhoto.suffix }}" ><br>
+    <span ng-if="details.venue.url"><a ng-href="{{ details.venue.url }}" target="_blank"> Website</a></span> - 
+    <span ng-if="details.venue.menu.url"><a ng-href="{{ details.venue.menu.url }}" target="_blank"> Menu </a> - </span>
+    <span> {{ details.venue.contact.formattedPhone }} </span> <br>
+    <span> {{ details.venue.location.address }} </span>
 
-<h5> Price range: {{ details.venue.price.message }} </h5>
-<h5> Credit cards accepted: {{ details.venue.attributes.groups[1].items[0].displayValue }} </h5>
-<h5> Outdoor seating: {{ details.venue.attributes.groups[2].items[0].displayValue }} </h5>
-<h5> {{ details.venue.contact.formattedPhone }} </h5>
+    <p> {{ details.venue.tips.groups[0].items[0].text }} </p>
+    <div class="marginRow">
+      <p> Price range: {{ price }} </p>
+      <p ng-if="reservations !=''"> Reservations: {{ reservations }}  </p>
+      <p ng-if="outdoor !=''"> Outdoor seating: {{ outdoor }} </p>
+      <p> Credit cards accepted:  {{ creditcards }} </p>
+      <p><span ng-repeat="menu in menus">
+          {{menu}}{{$last ? '' : ($index==menus.length-2) ? ' and ' : ', '}}
+      </span></p>
+      <p><span ng-repeat="drink in drinks">
+          {{drink}}{{$last ? '' : ($index==drinks.length-2) ? ' and ' : ', '}}
+      </span></p>
+      <p><span ng-repeat="option in options">
+          {{option}}{{$last ? '' : ($index==options.length-2) ? ' and ' : ', '}}
+      </span></p>
+    </div>
 
-
-
-
-  <button type="button" class="btn btn-default btn-sm" ng-click="vm.saveToCollection(details, user.id)">Save to favorites</button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="vm.saveToCollection(details, user.id)">Save to favorites</button>
+  </div>
