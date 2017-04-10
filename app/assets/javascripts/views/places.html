@@ -1,4 +1,5 @@
 <h2>Recommended Restaurants</h2>
+<h4>These spots are hand-picked by Vegan Food Finder users.</h4>
 <input ng-model="search" class="form-control" placeholder="Enter a city to filter restaurants" />
 <div ng-repeat="place in places | address:search">
   <a ui-sref="place({id: place.id})" class="list-group-item list-group-item-action">
