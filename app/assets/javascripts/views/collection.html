@@ -1,14 +1,20 @@
 <h2 ng-if="user">{{user.username}}'s Saved Restaurants</h2>
-
+<br>
 <ul class="list-group">
   <div ng-init="vm.getPlaces(user.id)">
-      <div ng-repeat="item in places">
-        <a ui-sref="place({id: item.id})" class="list-group-item list-group-item-action">
-        <h3>{{ item.name }}</h3>
-        <img ng-src="{{ item.image }}" >
-        <h4>{{ item.address }}</h4>
-        <h4>{{ item.description }}</h4>
-        </a>
-      </div>
+
+    <div ng-show="places.length == 0">
+      <h4> You haven't added any restaurants to your favorites yet. Try searching for a restaurant, or browsing recommended restaurants.</h4>
+    </div>
+
+    <div ng-repeat="item in places">
+      <a ui-sref="place({id: item.id})" class="list-group-item list-group-item-action">
+      <h3>{{ item.name }}</h3>
+      <img ng-src="{{ item.image }}" >
+      <h4>{{ item.address }}</h4>
+      <h4>{{ item.description }}</h4>
+      </a>
+    </div>
+
   </div>
 </ul>
