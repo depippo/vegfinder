@@ -3,21 +3,6 @@ function SearchController($scope, $http, SearchService, CollectionService) {
   var ctrl = this;
   $scope.gPlace;
 
-  ctrl.venueSearch = function(city) {
-    SearchService.getVenues(city)
-    .done(function(response) {
-      $scope.searchResults = [];
-      response.response.venues.forEach(function(venue){
-        $scope.searchResults.push(venue);
-      });
-      console.log($scope.searchResults);
-      $scope.searchResults.forEach(function(item){
-        console.log(item.name);
-      })
-      SearchService.searchResults = $scope.searchResults;
-    })
-  }
-
   ctrl.placeSearch = function(city) {
     SearchService.searchWithin(city)
     .done(function(response) {
@@ -29,7 +14,6 @@ function SearchController($scope, $http, SearchService, CollectionService) {
       console.log($scope.veganResults);
     })
   }
-
 
   ctrl.getCollections = function() {
     CollectionService.getCollection()

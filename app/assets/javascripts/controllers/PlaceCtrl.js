@@ -1,5 +1,7 @@
 function PlaceController($scope, place, SearchService, PlaceService, CollectionService, $rootScope) {
   
+  var ctrl = this;
+  
   $scope.menuItems = [];
   $scope.reviews = [];
   $scope.place = place.data;
@@ -22,17 +24,12 @@ function PlaceController($scope, place, SearchService, PlaceService, CollectionS
     console.log($scope.place);
   })
 
-
-
   $scope.$on('review', function(event, value){
     $scope.reviews.push(value);
     console.log("scope reviews is next")
     console.log($scope.reviews);
     console.log($scope.place);
   })
-
-  var ctrl = this;
-
 
   ctrl.getMenu = function(id) {
     SearchService.getMenu(id)
@@ -69,8 +66,6 @@ function PlaceController($scope, place, SearchService, PlaceService, CollectionS
     })
   }
 
-  var ctrl = this;
-
   ctrl.saveToCollection = function(place, id){
     console.log("calling the save to collection function")
     CollectionService.saveToCollectionFromPlace(place, id)
@@ -80,11 +75,8 @@ function PlaceController($scope, place, SearchService, PlaceService, CollectionS
       });
   }
 
-
-
 }
 
 angular
   .module('vegfinder')
   .controller('PlaceController', PlaceController);
-

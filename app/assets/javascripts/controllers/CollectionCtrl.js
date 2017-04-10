@@ -2,19 +2,6 @@ function CollectionController($scope, $http, CollectionService) {
 
   var ctrl = this;
 
-  // ctrl.getCollections = function() {
-  //   console.log("calling the function")
-  //   CollectionService.getCollection()
-  //   .success(function(response) {
-  //     $scope.collections = [];
-  //     response.forEach(function(item){
-  //       $scope.collections.push(item);
-  //     })
-  //     CollectionService.collections = $scope.collections
-  //   })
-  // }
-
-
   ctrl.getPlaces = function(id) {
     CollectionService.getOneCollection(id)
     .success(function(response) {
@@ -27,22 +14,8 @@ function CollectionController($scope, $http, CollectionService) {
     })
   }
 
-
-
 }
 
 angular
   .module('vegfinder')
   .controller('CollectionController', CollectionController);
-
-
-  //   ctrl.getplaces = function() {
-  //   CollectionService.getCollection()
-  //   .success(function(response) {
-  //     $scope.collections = [];
-  //     response.forEach(function(item){
-  //       $scope.collections.push(item);
-  //     })
-  //     CollectionService.collections = $scope.collections
-  //   })
-  // }

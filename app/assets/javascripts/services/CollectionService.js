@@ -73,7 +73,6 @@
       })
     }
 
-
   }
 
   CollectionService.$inject = ['$http', 'UserService']
