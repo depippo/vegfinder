@@ -1,10 +1,10 @@
-  <input ng-model="search" placeholder="Enter a city to filter restaurants" />
-
-    <div ng-repeat="place in places | address:search">
-      <h4>{{ place.name }}</h4>
-      <img ng-src="{{ place.image }}" >
-      <a ui-sref="place({id: place.id})">Place show page</a>
-      <h4> <a ng-href="{{ place.menu }}"> {{ place.menu }} </a></h4>
-      <h4>{{ place.address }}</h4>
-      <h4>{{ place.description }}</h4>
-    </div>
+<h2>Recommended Restaurants</h2>
+<input ng-model="search" class="form-control" placeholder="Enter a city to filter restaurants" />
+<div ng-repeat="place in places | address:search">
+  <a ui-sref="place({id: place.id})" class="list-group-item list-group-item-action">
+  <h3>{{ place.name }}</h3>
+  <img ng-src="{{ place.image }}" >
+  <h4>{{ place.address }}</h4>
+  <h4>{{ place.description }}</h4>
+  </a>
+</div>
