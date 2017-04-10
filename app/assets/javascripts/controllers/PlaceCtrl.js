@@ -11,6 +11,9 @@ function PlaceController($scope, place, SearchService, PlaceService, CollectionS
   })
 
   $scope.rec = null;
+  $scope.review = null;
+
+  $scope.containsUser = (arr, user_id) => arr.some(o => o.user.id == user_id);
 
   $scope.$on('update', function(event, value){
     $scope.menuItems.push(value);
@@ -19,7 +22,7 @@ function PlaceController($scope, place, SearchService, PlaceService, CollectionS
     console.log($scope.place);
   })
 
-  $scope.review = null;
+
 
   $scope.$on('review', function(event, value){
     $scope.reviews.push(value);

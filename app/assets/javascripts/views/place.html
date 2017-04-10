@@ -13,7 +13,7 @@
             <li class="list-group-item list-group-item-action"> {{ review.user.username }} says: {{ review.content }}</li>
           </div>
         </ul>
-      <form name="reviewForm" novalidate ng-submit="reviewForm.$valid && vm.saveReview(place.id, user.id)">
+      <form ng-hide="containsUser(reviews, user.id)" name="reviewForm" novalidate ng-submit="reviewForm.$valid && vm.saveReview(place.id, user.id)">
         <textarea class="textarea" rows="4" cols="75" name="review" ng-model="review" placeholder="Enter a review" ng-minlength="3" required/>
         <span style="color:Red" ng-if="reviewForm.review.$touched" ng-show="reviewForm.review.$error.minlength"> Must be at least 3 characters! </span>
         </textarea>
