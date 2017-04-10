@@ -62,6 +62,17 @@
       })
     }
 
+    this.saveToCollectionFromPlace = function(place, id){
+      var url = '/api/collections/' + id + '/places.json'
+      return $http({
+        url: url,
+        method: 'PUT',
+        data: {
+          place: place
+        }
+      })
+    }
+
 
   }
 

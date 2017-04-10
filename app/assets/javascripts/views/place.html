@@ -17,7 +17,7 @@
         <textarea class="textarea" rows="4" cols="75" name="review" ng-model="review" placeholder="Enter a review" ng-minlength="3" required/>
         <span style="color:Red" ng-if="reviewForm.review.$touched" ng-show="reviewForm.review.$error.minlength"> Must be at least 3 characters! </span>
         </textarea>
-        <button type="submit"> Submit </button>
+        <button class="btn btn-default btn-md" type="submit"> Submit Review</button>
       </form>
   </div>
 
@@ -31,8 +31,10 @@
       <form name="recForm" novalidate ng-submit="recForm.$valid && vm.saveRec(place.id, user.id)">
         <input type="text" name="rec" ng-model="rec" placeholder="Enter a menu item" ng-minlength="3" required/>
         <span style="color:Red" ng-if="recForm.rec.$touched" ng-show="recForm.rec.$error.minlength"> Must be at least 3 characters! </span>
-        <button type="submit"> Recommend </button>
+        <button class="btn btn-default btn-md" type="submit"> Recommend </button>
       </form>
   </div> 
 
-</div> 
+</div>
+
+<button type="button" class="btn btn-default btn-md" ng-click="vm.saveToCollection(place, user.id)">Save to Favorites</button>

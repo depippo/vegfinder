@@ -57,7 +57,7 @@ function DetailsController($scope, details, SearchService, CollectionService) {
     CollectionService.saveToCollectionFromDetails(details, id)
       .success(function(response){
         console.log(response)
-        alert(details.venue.name + " has been saved to your collection.");
+        alert(details.venue.name + " has been saved to your favorites.");
       });
     }
 

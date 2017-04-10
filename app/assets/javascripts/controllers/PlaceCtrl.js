@@ -1,4 +1,4 @@
-function PlaceController($scope, place, SearchService, PlaceService, $rootScope) {
+function PlaceController($scope, place, SearchService, PlaceService, CollectionService, $rootScope) {
   
   $scope.menuItems = [];
   $scope.reviews = [];
@@ -64,6 +64,17 @@ function PlaceController($scope, place, SearchService, PlaceService, $rootScope)
       $scope.reviewForm.$setPristine();
       $scope.review = null;
     })
+  }
+
+  var ctrl = this;
+
+  ctrl.saveToCollection = function(place, id){
+    console.log("calling the save to collection function")
+    CollectionService.saveToCollectionFromPlace(place, id)
+      .success(function(response){
+        console.log(response)
+        alert(place.name + " has been saved to your favorites.");
+      });
   }
 
 
