@@ -14,8 +14,11 @@ angular
         url: '/search',
         templateUrl: 'views/search.html',
         controller: 'SearchController as vm',
-       onEnter: function(Auth, $state){
+        onEnter: function(Auth, $state){
           Auth.currentUser();
+          if(!Auth._currentUser){
+            $state.go('home');
+          }
         }
       })
       .state('search.details', {
@@ -29,6 +32,9 @@ angular
         },
        onEnter: function(Auth, $state){
           Auth.currentUser();
+          if(!Auth._currentUser){
+            $state.go('home');
+          }
         }
       })
       .state('collection', {
@@ -37,6 +43,9 @@ angular
         controller: 'CollectionController as vm',
        onEnter: function(Auth, $state){
           Auth.currentUser();
+          if(!Auth._currentUser){
+            $state.go('home');
+          }
         }
       })
       .state('place', {
@@ -45,6 +54,9 @@ angular
         controller: 'PlaceController as vm',
        onEnter: function(Auth, $state){
           Auth.currentUser();
+          if(!Auth._currentUser){
+            $state.go('home');
+          }
         },
         resolve: {
           place: function($stateParams, CollectionService) {
@@ -56,6 +68,12 @@ angular
         url: '/places',
         templateUrl: 'views/places.html',
         controller: 'PlacesController as vm',
+         onEnter: function(Auth, $state){
+            Auth.currentUser();
+            if(!Auth._currentUser){
+              $state.go('home');
+            }
+          },
         resolve: {
           places: function($stateParams, PlaceService) {
             return PlaceService.getPlaces();
