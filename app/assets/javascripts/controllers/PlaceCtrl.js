@@ -1,7 +1,7 @@
 function PlaceController($scope, place, SearchService, PlaceService, $rootScope) {
   
   $scope.menuItems = [];
-  $scope.reviews = []
+  $scope.reviews = [];
   $scope.place = place.data;
   place.data.recommendations.forEach(function(rec){
     $scope.menuItems.push(rec);

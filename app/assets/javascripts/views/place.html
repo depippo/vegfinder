@@ -7,32 +7,32 @@
   
 <div class="row">
   <div class="col-xs-8">
-    <h5> Vegfinder user reviews: </h5>
-      <ul class="list-group">
-        <div ng-repeat="review in reviews">
-          <li class="list-group-item list-group-item-action"> {{ review.user.username }} says: {{ review.content }}</li>
-        </div>
-      </ul>
-    <form name="reviewForm" novalidate ng-submit="reviewForm.$valid && vm.saveReview(place.id, user.id)">
-      <textarea class="textarea" rows="4" cols="75" name="review" ng-model="review" placeholder="Enter a review" ng-minlength="3" required/>
-      <span style="color:Red" ng-if="reviewForm.review.$touched" ng-show="reviewForm.review.$error.minlength"> Must be at least 3 characters! </span>
-      </textarea>
-      <button type="submit"> Submit </button>
-    </form>
+      <h5 ng-hide="reviews.length == 0"> Vegfinder user reviews: </h5>
+        <ul class="list-group">
+          <div ng-repeat="review in reviews">
+            <li class="list-group-item list-group-item-action"> {{ review.user.username }} says: {{ review.content }}</li>
+          </div>
+        </ul>
+      <form name="reviewForm" novalidate ng-submit="reviewForm.$valid && vm.saveReview(place.id, user.id)">
+        <textarea class="textarea" rows="4" cols="75" name="review" ng-model="review" placeholder="Enter a review" ng-minlength="3" required/>
+        <span style="color:Red" ng-if="reviewForm.review.$touched" ng-show="reviewForm.review.$error.minlength"> Must be at least 3 characters! </span>
+        </textarea>
+        <button type="submit"> Submit </button>
+      </form>
   </div>
 
   <div class="col-xs-4">
-    <h5> Vegfinder users recommend: </h5>
-      <ul class="list-group">
-        <div ng-repeat="item in menuItems">
-          <li class="list-group-item list-group-item-action"> {{ item.dish }} - {{ item.user.username }} </li>
-        </div>
-      </ul>
-    <form name="recForm" novalidate ng-submit="recForm.$valid && vm.saveRec(place.id, user.id)">
-      <input type="text" name="rec" ng-model="rec" placeholder="Enter a menu item" ng-minlength="3" required/>
-      <span style="color:Red" ng-if="recForm.rec.$touched" ng-show="recForm.rec.$error.minlength"> Must be at least 3 characters! </span>
-      <button type="submit"> Recommend </button>
-    </form>
+      <h5 ng-hide="menuItems.length == 0"> Vegfinder users recommend: </h5>
+        <ul class="list-group">
+          <div ng-repeat="item in menuItems">
+            <li class="list-group-item list-group-item-action"> {{ item.dish }} - {{ item.user.username }} </li>
+          </div>
+        </ul>
+      <form name="recForm" novalidate ng-submit="recForm.$valid && vm.saveRec(place.id, user.id)">
+        <input type="text" name="rec" ng-model="rec" placeholder="Enter a menu item" ng-minlength="3" required/>
+        <span style="color:Red" ng-if="recForm.rec.$touched" ng-show="recForm.rec.$error.minlength"> Must be at least 3 characters! </span>
+        <button type="submit"> Recommend </button>
+      </form>
   </div> 
 
 </div> 
