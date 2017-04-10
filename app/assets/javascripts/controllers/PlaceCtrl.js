@@ -49,9 +49,10 @@ function PlaceController($scope, place, SearchService, PlaceService, $rootScope)
     PlaceService.saveRec(id, dish, user)
     .success(function(response) {
       $rootScope.$broadcast('update', response);
-      console.log("PlaceService.saverec done");
-      console.log(response);
+      $scope.recForm.$setPristine();
+      $scope.rec = null;
     })
+
   }
 
   ctrl.saveReview = function(id, user) {
@@ -60,8 +61,8 @@ function PlaceController($scope, place, SearchService, PlaceService, $rootScope)
     PlaceService.saveReview(id, content, user)
     .success(function(response) {
       $rootScope.$broadcast('review', response);
-      console.log("PlaceService.savereview done");
-      console.log(response);
+      $scope.reviewForm.$setPristine();
+      $scope.review = null;
     })
   }
 
