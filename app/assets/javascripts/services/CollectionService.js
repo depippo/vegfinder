@@ -28,33 +28,6 @@
       })
     }
 
-    this.saveToCollection = function(item, id){
-    var imageUrl = item.venue.photos.groups[0].items[0].prefix + '128' + item.venue.photos.groups[0].items[0].suffix;
-    var formattedAddress = item.venue.location.formattedAddress[0] + ", " + item.venue.location.formattedAddress[1];
-    if (!item.venue.menu) {
-      var venueMenu = undefined;
-    }
-    else {
-      var venueMenu = item.venue.menu.url;
-    }
-      var placeObject = {
-        name: item.venue.name,
-        menu: venueMenu,
-        address: formattedAddress,
-        description: item.tips[0].text,
-        image: imageUrl,
-        venue_id: item.venue.id
-      }
-      var url = '/api/collections/' + id + '/places.json'
-      return $http({
-        url: url,
-        method: 'PUT',
-        data: {
-          place: placeObject
-        }
-      })
-    }
-
     this.saveToCollectionFromDetails = function(item, id){
     var imageUrl = item.venue.photos.groups[0].items[0].prefix + '128' + item.venue.photos.groups[0].items[0].suffix;
     var formattedAddress = item.venue.location.formattedAddress[0] + ", " + item.venue.location.formattedAddress[1];
@@ -64,9 +37,16 @@
     else {
       var venueMenu = item.venue.menu.url;
     }
+    if (!item.venue.url) {
+      var venueUrl = undefined;
+    }
+    else {
+      var venueUrl = item.venue.url;
+    }
       var placeObject = {
         name: item.venue.name,
         menu: venueMenu,
+        url: venueUrl,
         address: formattedAddress,
         description: item.venue.tips.groups[0].items[0].text,
         image: imageUrl,
