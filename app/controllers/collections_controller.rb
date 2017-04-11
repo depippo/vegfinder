@@ -18,7 +18,6 @@ class CollectionsController < ApplicationController
     render json: user
   end
 
-  
 private
 
   def place_params
@@ -27,10 +26,3 @@ private
 
 
 end
-
-
-
-  #   def update
-  #   collection = Collection.find_or_create_by(collection_params)
-  #   collection.save
-  # end
