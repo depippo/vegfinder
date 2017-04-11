@@ -1,4 +1,4 @@
-  <div ng-init="vm.getPlaceInfo()">
+  <div class="panel panel-default box" ng-init="vm.getPlaceInfo()">
     <h3>{{ details.venue.name }}</h4>
     <img ng-src="{{ details.venue.bestPhoto.prefix}}192{{details.venue.bestPhoto.suffix }}" ><br>
     <span ng-if="details.venue.url"><a ng-href="{{ details.venue.url }}" target="_blank"> Website</a></span> - 

@@ -10,3 +10,28 @@
 .textarea {
   resize: none;
 }
+
+body {
+  background-image: url('./tempeh-1343291_1280.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.box {
+  padding-left: 30px;
+  padding-bottom: 10px;
+  padding-right: 30px;
+  box-shadow: 10px 10px 30px black !important;
+  border-color: white !important;
+}
+
+.white {
+  color: white;
+  text-shadow: 1px 1px 2px black; 
+}
+
+.searchbox {
+  box-shadow: 10px 10px 30px black !important;
+  border-color: white !important;
+  margin-bottom: 10px !important;
+}

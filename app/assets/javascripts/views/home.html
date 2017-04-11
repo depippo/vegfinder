@@ -1,4 +1,9 @@
-<div class="col-lg-8 col-lg-offset-2">
-<h3 ng-if="user">Welcome to Vegan Food Finder, {{user.username}}!</h3>
-<h3 ng-if="!user">Welcome to Vegan Food Finder. Please log in or register to start browsing.</h3>
+<div class="white" ng-if="user">
+  <h1>Welcome to Vegan Food Finder, {{user.username}}!</h1>
+  <h2>Try clicking Search to get started. </h2>
+</div>
+
+<div class="white" ng-if="!user">
+  <h1>Welcome to Vegan Food Finder!</h1>
+  <h2>Please log in or register to start browsing.</h2>
 </div>
