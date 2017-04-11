@@ -11,7 +11,7 @@
       <p> Price range: {{ price }} </p>
       <p ng-if="reservations !=''"> Reservations: {{ reservations }}  </p>
       <p ng-if="outdoor !=''"> Outdoor seating: {{ outdoor }} </p>
-      <p> Credit cards accepted:  {{ creditcards }} </p>
+      <p ng-if="creditcards !=''"> Credit cards accepted:  {{ creditcards }} </p>
       <p><span ng-repeat="menu in menus">
           {{menu}}{{$last ? '' : ($index==menus.length-2) ? ' and ' : ', '}}
       </span></p>
