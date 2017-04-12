@@ -18,7 +18,7 @@ angular
       Auth.login($scope.user, config).then(function(user){
         UpdateService.updateLists(user)
         $rootScope.user = user
-        alert("You're all signed in, " + user.username);
+        alert("You're signed in, " + user.username);
         $state.go('home');
       }, function(response){
         alert(response.data.error)
