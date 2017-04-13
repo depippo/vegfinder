@@ -1,15 +1,11 @@
-(function(){
-  function UpdateService(CollectionService, UserService, SearchService){
-    this.updateLists = function(user){
-      UserService.user = user;
-      return user;
-    }
-
+function UpdateService(UserService){
+  this.updateLists = function(user){
+    UserService.user = user;
+    return user;
   }
 
-  UpdateService.$inject = ['CollectionService', 'UserService', 'SearchService']
+}
 
-  angular
-    .module('vegfinder')
-    .service('UpdateService', UpdateService)
-}())
+angular
+  .module('vegfinder')
+  .service('UpdateService', UpdateService)

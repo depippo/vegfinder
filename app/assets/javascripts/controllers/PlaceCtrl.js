@@ -19,16 +19,10 @@ function PlaceController($scope, place, SearchService, PlaceService, CollectionS
 
   $scope.$on('update', function(event, value){
     $scope.menuItems.push(value);
-    console.log("scope menu items is next")
-    console.log($scope.menuItems);
-    console.log($scope.place);
   })
 
   $scope.$on('review', function(event, value){
     $scope.reviews.push(value);
-    console.log("scope reviews is next")
-    console.log($scope.reviews);
-    console.log($scope.place);
   })
 
   ctrl.getMenu = function(id) {
@@ -38,8 +32,6 @@ function PlaceController($scope, place, SearchService, PlaceService, CollectionS
       response.response.menu.menus.items[0].entries.items.forEach(function(menu){
         $scope.menus.push(menu);
       });
-      SearchService.menus = $scope.menus;
-      console.log($scope.menus);
     })
   }
 
@@ -67,10 +59,8 @@ function PlaceController($scope, place, SearchService, PlaceService, CollectionS
   }
 
   ctrl.saveToCollection = function(place, id){
-    console.log("calling the save to collection function")
     CollectionService.saveToCollectionFromPlace(place, id)
       .success(function(response){
-        console.log(response)
         alert(place.name + " has been saved to your favorites.");
       });
   }

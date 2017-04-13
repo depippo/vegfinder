@@ -10,7 +10,6 @@ function SearchController($scope, $http, SearchService, CollectionService) {
       response.response.groups[0].items.forEach(function(item){
         $scope.veganResults.push(item);
       });
-      SearchService.veganResults = $scope.veganResults;
       console.log($scope.veganResults);
     })
   }
@@ -22,7 +21,6 @@ function SearchController($scope, $http, SearchService, CollectionService) {
       response.forEach(function(item){
         $scope.collections.push(item);
       })
-      CollectionService.collections = $scope.collections
     })
   }
 

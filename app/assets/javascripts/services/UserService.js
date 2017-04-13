@@ -1,9 +1,7 @@
-(function(){
-  function UserService(){
-    this.user = undefined;
-  }
+function UserService(){
+  this.user = undefined;
+}
 
-  angular
-    .module('vegfinder')
-    .service('UserService', UserService)
-}())
+angular
+  .module('vegfinder')
+  .service('UserService', UserService)
