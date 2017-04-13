@@ -4,7 +4,8 @@
   <div ng-init="vm.getPlaces(user.id)">
 
     <div ng-show="places.length == 0">
-      <h4> You haven't added any restaurants to your favorites yet. Try searching for a restaurant, or browsing recommended restaurants.</h4>
+      <h3 class="white"> You haven't added any restaurants to your favorites yet. </h3>
+      <h3 class="white"> Try searching for a restaurant, or browsing recommended restaurants.</h3>
     </div>
 
     <div class="searchbox" ng-repeat="item in places">
